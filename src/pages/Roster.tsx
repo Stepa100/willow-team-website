@@ -21,13 +21,6 @@ const mainTeam = [
     achievements: "Основной состав",
     stats: { winrate: "80%", kda: "1.18", games: "25" },
     rating: 1920,
-    matches: [
-      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.4" },
-      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "1.3" },
-      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "1.0" },
-      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.5" },
-      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.2" },
-    ],
   },
   {
     id: 2,
@@ -39,13 +32,6 @@ const mainTeam = [
     achievements: "Основной состав",
     stats: { winrate: "76%", kda: "1.00", games: "28" },
     rating: 1850,
-    matches: [
-      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.1" },
-      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "0.9" },
-      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.8" },
-      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.2" },
-      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.0" },
-    ],
   },
   {
     id: 3,
@@ -57,13 +43,6 @@ const mainTeam = [
     achievements: "Основной состав",
     stats: { winrate: "49%", kda: "0.90", games: "22" },
     rating: 1680,
-    matches: [
-      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "0.9" },
-      { date: "8 янв", opponent: "Beta Squad", result: "loss", kda: "0.7" },
-      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.8" },
-      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.1" },
-      { date: "1 янв", opponent: "Epsilon Team", result: "loss", kda: "0.9" },
-    ],
   },
   {
     id: 4,
@@ -75,13 +54,6 @@ const mainTeam = [
     achievements: "Основной состав",
     stats: { winrate: "67%", kda: "1.12", games: "28" },
     rating: 1870,
-    matches: [
-      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.3" },
-      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "1.2" },
-      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.9" },
-      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.4" },
-      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.1" },
-    ],
   },
   {
     id: 5,
@@ -93,13 +65,6 @@ const mainTeam = [
     achievements: "Капитан команды",
     stats: { winrate: "54%", kda: "1.00", games: "54" },
     rating: 1790,
-    matches: [
-      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.0" },
-      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "0.9" },
-      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "1.1" },
-      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.0" },
-      { date: "1 янв", opponent: "Epsilon Team", result: "loss", kda: "0.8" },
-    ],
   },
 ];
 
