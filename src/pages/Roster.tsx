@@ -65,7 +65,7 @@ const academy = [
     age: 18,
     country: "🇷🇺 Россия",
     achievements: "Лидер академии",
-    stats: { winrate: "70%", kda: "1.8", games: "34" },
+    stats: { winrate: "70%", kda: "1.08", games: "34" },
   },
   {
     id: 7,
