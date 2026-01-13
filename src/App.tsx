@@ -12,6 +12,7 @@ import Achievements from "./pages/Achievements";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
+        <AnimatedBackground />
+        <div className="flex flex-col min-h-screen relative z-10">
           <Navigation />
           <main className="flex-1 pt-20">
             <Routes>
