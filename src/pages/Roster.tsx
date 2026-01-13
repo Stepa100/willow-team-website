@@ -20,6 +20,14 @@ const mainTeam = [
     country: "🇷🇺 Россия",
     achievements: "Основной состав",
     stats: { winrate: "80%", kda: "1.18", games: "25" },
+    rating: 1920,
+    matches: [
+      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.4" },
+      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "1.3" },
+      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "1.0" },
+      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.5" },
+      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.2" },
+    ],
   },
   {
     id: 2,
@@ -30,6 +38,14 @@ const mainTeam = [
     country: "🇷🇺 Россия",
     achievements: "Основной состав",
     stats: { winrate: "76%", kda: "1.00", games: "28" },
+    rating: 1850,
+    matches: [
+      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.1" },
+      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "0.9" },
+      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.8" },
+      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.2" },
+      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.0" },
+    ],
   },
   {
     id: 3,
@@ -40,6 +56,14 @@ const mainTeam = [
     country: "🇷🇺 Россия",
     achievements: "Основной состав",
     stats: { winrate: "49%", kda: "0.90", games: "22" },
+    rating: 1680,
+    matches: [
+      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "0.9" },
+      { date: "8 янв", opponent: "Beta Squad", result: "loss", kda: "0.7" },
+      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.8" },
+      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.1" },
+      { date: "1 янв", opponent: "Epsilon Team", result: "loss", kda: "0.9" },
+    ],
   },
   {
     id: 4,
@@ -50,6 +74,14 @@ const mainTeam = [
     country: "🇬🇷 Греция",
     achievements: "Основной состав",
     stats: { winrate: "67%", kda: "1.12", games: "28" },
+    rating: 1870,
+    matches: [
+      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.3" },
+      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "1.2" },
+      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "0.9" },
+      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.4" },
+      { date: "1 янв", opponent: "Epsilon Team", result: "win", kda: "1.1" },
+    ],
   },
   {
     id: 5,
@@ -60,6 +92,14 @@ const mainTeam = [
     country: "🇷🇺 Россия",
     achievements: "Капитан команды",
     stats: { winrate: "54%", kda: "1.00", games: "54" },
+    rating: 1790,
+    matches: [
+      { date: "10 янв", opponent: "Team Alpha", result: "win", kda: "1.0" },
+      { date: "8 янв", opponent: "Beta Squad", result: "win", kda: "0.9" },
+      { date: "5 янв", opponent: "Gamma Force", result: "loss", kda: "1.1" },
+      { date: "3 янв", opponent: "Delta Warriors", result: "win", kda: "1.0" },
+      { date: "1 янв", opponent: "Epsilon Team", result: "loss", kda: "0.8" },
+    ],
   },
 ];
 
@@ -183,7 +223,7 @@ const PlayerCard = ({ player, onClick }: { player: typeof mainTeam[0] | typeof a
 };
 
 const Roster = () => {
-  const [selectedPlayer, setSelectedPlayer] = useState<typeof academy[0] | null>(null);
+  const [selectedPlayer, setSelectedPlayer] = useState<typeof academy[0] | typeof mainTeam[0] | null>(null);
 
   return (
     <div className="min-h-screen py-20">
@@ -223,7 +263,7 @@ const Roster = () => {
                   className="animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <PlayerCard player={player} />
+                  <PlayerCard player={player} onClick={() => setSelectedPlayer(player)} />
                 </div>
               ))}
             </div>
@@ -314,6 +354,51 @@ const Roster = () => {
                     </div>
                   </div>
                 </div>
+
+                {'matches' in selectedPlayer && selectedPlayer.matches && (
+                  <div className="border-t border-border pt-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Icon name="History" size={20} className="text-primary" />
+                      <h3 className="font-heading text-2xl font-bold text-white">
+                        История матчей
+                      </h3>
+                    </div>
+                    <div className="space-y-3">
+                      {selectedPlayer.matches.map((match, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between bg-black/30 p-4 rounded-lg hover:bg-black/40 transition-colors"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="text-sm text-muted-foreground min-w-[60px]">
+                              {match.date}
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Badge
+                                className={
+                                  match.result === "win"
+                                    ? "bg-green-950 text-green-400 border-green-800"
+                                    : "bg-red-950 text-red-400 border-red-800"
+                                }
+                              >
+                                {match.result === "win" ? "Победа" : "Поражение"}
+                              </Badge>
+                              <span className="font-heading font-bold text-white">
+                                vs {match.opponent}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground">KDA:</span>
+                            <span className="font-heading font-bold text-primary">
+                              {match.kda}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </DialogContent>
