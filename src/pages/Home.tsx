@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { Card } from "@/components/ui/card";
 
@@ -20,14 +21,18 @@ const Home = () => {
                 Профессиональная киберспортивная команда, покоряющая вершины турниров и создающая историю в мире соревновательного гейминга.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-heading font-bold">
-                  <Icon name="Trophy" className="mr-2" size={20} />
-                  Наши достижения
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-heading font-bold">
-                  <Icon name="Users" className="mr-2" size={20} />
-                  Состав команды
-                </Button>
+                <Link to="/achievements">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-heading font-bold">
+                    <Icon name="Trophy" className="mr-2" size={20} />
+                    Наши достижения
+                  </Button>
+                </Link>
+                <Link to="/roster">
+                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-heading font-bold">
+                    <Icon name="Users" className="mr-2" size={20} />
+                    Состав команды
+                  </Button>
+                </Link>
               </div>
             </div>
             

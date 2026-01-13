@@ -12,6 +12,7 @@ const Navigation = () => {
     { path: "/news", label: "Новости", icon: "Newspaper" },
     { path: "/roster", label: "Состав", icon: "Users" },
     { path: "/matches", label: "Матчи", icon: "Swords" },
+    { path: "/achievements", label: "Достижения", icon: "Trophy" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import Roster from "./pages/Roster";
 import Matches from "./pages/Matches";
+import Achievements from "./pages/Achievements";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/news" element={<News />} />
               <Route path="/roster" element={<Roster />} />
               <Route path="/matches" element={<Matches />} />
+              <Route path="/achievements" element={<Achievements />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
