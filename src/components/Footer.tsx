@@ -57,15 +57,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Icon name="Mail" size={14} />
-                info@willowteam.pro
-              </li>
-              <li className="flex items-center gap-2">
-                <Icon name="Phone" size={14} />
-                +7 (999) 123-45-67
-              </li>
-              <li className="flex items-center gap-2">
-                <Icon name="MapPin" size={14} />
-                Москва, Россия
+                willowteamcs2@gmail.com
               </li>
             </ul>
           </div>
@@ -74,12 +66,12 @@ const Footer = () => {
             <h4 className="font-heading font-bold text-white mb-4">Социальные сети</h4>
             <div className="flex gap-3">
               <a
-                href="https://twitch.tv/willowteam"
+                href="https://t.me/WillowTeamCS2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted hover:bg-primary transition-colors flex items-center justify-center"
               >
-                <Icon name="Twitch" size={18} />
+                <Icon name="Send" size={18} />
               </a>
               <a
                 href="https://youtube.com/@willowteam"
@@ -88,14 +80,6 @@ const Footer = () => {
                 className="w-10 h-10 rounded-full bg-muted hover:bg-primary transition-colors flex items-center justify-center"
               >
                 <Icon name="Youtube" size={18} />
-              </a>
-              <a
-                href="https://twitter.com/willowteam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted hover:bg-primary transition-colors flex items-center justify-center"
-              >
-                <Icon name="Twitter" size={18} />
               </a>
               <a
                 href="https://discord.gg/willowteam"
