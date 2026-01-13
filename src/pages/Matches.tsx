@@ -231,36 +231,3 @@ const Matches = () => {
 };
 
 export default Matches;
-
-                    <Badge
-                      className={
-                        match.result === "win"
-                          ? "bg-green-950 text-green-400 border-green-800"
-                          : "bg-red-950 text-red-400 border-red-800"
-                      }
-                    >
-                      {match.result === "win" ? (
-                        <>
-                          <Icon name="Trophy" className="mr-1" size={14} />
-                          Победа
-                        </>
-                      ) : (
-                        <>
-                          <Icon name="X" className="mr-1" size={14} />
-                          Поражение
-                        </>
-                      )}
-                    </Badge>
-                  </div>
-                </Card>
-                ))}
-              </div>
-            )}
-          </section>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Matches;
