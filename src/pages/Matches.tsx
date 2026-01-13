@@ -170,9 +170,11 @@ const Matches = () => {
                       </Badge>
                       <div className="flex items-center gap-4 mb-2">
                         <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-                            <span className="text-xl">🌳</span>
-                          </div>
+                          <img 
+                            src="https://cdn.poehali.dev/files/Без названия13_20260112181455.png" 
+                            alt="Willow Team"
+                            className="w-10 h-10 rounded-full object-contain bg-white/5 p-1"
+                          />
                           <span className="font-heading font-bold text-white">
                             Willow Team
                           </span>
@@ -181,13 +183,55 @@ const Matches = () => {
                           {match.score}
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                            <span className="text-xl">{match.opponentLogo}</span>
-                          </div>
+                          <img 
+                            src="https://cdn.poehali.dev/files/Без названия13_20260112181455.png" 
+                            alt="Willow Academy"
+                            className="w-10 h-10 rounded-full object-contain bg-white/5 p-1"
+                          />
                           <span className="font-heading font-bold text-white">
                             {match.opponent}
                           </span>
                         </div>
+                      </div>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Icon name="Calendar" size={14} />
+                        {match.date}
+                      </div>
+                    </div>
+
+                    <Badge
+                      className={
+                        match.result === "win"
+                          ? "bg-green-950 text-green-400 border-green-800"
+                          : "bg-red-950 text-red-400 border-red-800"
+                      }
+                    >
+                      {match.result === "win" ? (
+                        <>
+                          <Icon name="Trophy" className="mr-1" size={14} />
+                          Победа
+                        </>
+                      ) : (
+                        <>
+                          <Icon name="X" className="mr-1" size={14} />
+                          Поражение
+                        </>
+                      )}
+                    </Badge>
+                  </div>
+                </Card>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Matches;
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Icon name="Calendar" size={14} />
