@@ -22,7 +22,17 @@ const recentMatches: Array<{
   date: string;
   score: string;
   result: string;
-}> = [];
+}> = [
+  {
+    id: 1,
+    tournament: "Тренировочный матч",
+    opponent: "Willow Academy",
+    opponentLogo: "🌿",
+    date: "13 января 2026",
+    score: "0:2",
+    result: "loss",
+  },
+];
 
 const Matches = () => {
   return (
