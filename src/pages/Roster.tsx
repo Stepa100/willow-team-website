@@ -51,6 +51,16 @@ const mainTeam = [
     achievements: "Основной состав",
     stats: { winrate: "67%", kda: "1.12", games: "28" },
   },
+  {
+    id: 5,
+    nickname: "sk1nw0rk",
+    role: "IGL",
+    realName: "Даниил",
+    age: 16,
+    country: "🇷🇺 Россия",
+    achievements: "Капитан команды",
+    stats: { winrate: "54%", kda: "1.00", games: "54" },
+  },
 ];
 
 const academy = [
