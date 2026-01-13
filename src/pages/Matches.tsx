@@ -2,82 +2,27 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
-const upcomingMatches = [
-  {
-    id: 1,
-    tournament: "Pro League Season 5",
-    opponent: "Thunder Gaming",
-    opponentLogo: "⚡",
-    date: "20 января 2026",
-    time: "18:00 МСК",
-    format: "BO3",
-    status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
-  },
-  {
-    id: 2,
-    tournament: "Winter Cup 2026",
-    opponent: "Dragon Esports",
-    opponentLogo: "🐉",
-    date: "23 января 2026",
-    time: "20:00 МСК",
-    format: "BO5",
-    status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
-  },
-  {
-    id: 3,
-    tournament: "Regional Championship",
-    opponent: "Phoenix Squad",
-    opponentLogo: "🔥",
-    date: "27 января 2026",
-    time: "19:00 МСК",
-    format: "BO3",
-    status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
-  },
-  {
-    id: 4,
-    tournament: "Pro League Season 5",
-    opponent: "Shadow Wolves",
-    opponentLogo: "🐺",
-    date: "30 января 2026",
-    time: "21:00 МСК",
-    format: "BO3",
-    status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
-  },
-];
+const upcomingMatches: Array<{
+  id: number;
+  tournament: string;
+  opponent: string;
+  opponentLogo: string;
+  date: string;
+  time: string;
+  format: string;
+  status: string;
+  stream: string;
+}> = [];
 
-const recentMatches = [
-  {
-    id: 5,
-    tournament: "Winter Championship 2026",
-    opponent: "Dragon Esports",
-    opponentLogo: "🐉",
-    date: "8 января 2026",
-    score: "3:1",
-    result: "win",
-  },
-  {
-    id: 6,
-    tournament: "Pro League Season 5",
-    opponent: "Titan Force",
-    opponentLogo: "⚔️",
-    date: "5 января 2026",
-    score: "2:1",
-    result: "win",
-  },
-  {
-    id: 7,
-    tournament: "New Year Cup",
-    opponent: "Storm Raiders",
-    opponentLogo: "⛈️",
-    date: "29 декабря 2025",
-    score: "1:2",
-    result: "loss",
-  },
-];
+const recentMatches: Array<{
+  id: number;
+  tournament: string;
+  opponent: string;
+  opponentLogo: string;
+  date: string;
+  score: string;
+  result: string;
+}> = [];
 
 const Matches = () => {
   return (
@@ -101,8 +46,19 @@ const Matches = () => {
               </h2>
             </div>
 
-            <div className="space-y-4">
-              {upcomingMatches.map((match, index) => (
+            {upcomingMatches.length === 0 ? (
+              <Card className="bg-gradient-to-br from-card to-black border-border p-12 text-center">
+                <Icon name="Calendar" size={64} className="text-muted-foreground mx-auto mb-6 opacity-50" />
+                <h3 className="font-heading text-2xl font-bold text-white mb-4">
+                  Матчей пока нет
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  Мы только начинаем свой путь. Скоро здесь появится расписание наших первых матчей.
+                </p>
+              </Card>
+            ) : (
+              <div className="space-y-4">
+                {upcomingMatches.map((match, index) => (
                 <Card
                   key={match.id}
                   className="bg-card border-border p-6 hover:border-primary transition-all duration-300 animate-fade-in hover:scale-[1.01]"
@@ -166,8 +122,9 @@ const Matches = () => {
                     </div>
                   </div>
                 </Card>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </section>
 
           <section>
@@ -178,8 +135,19 @@ const Matches = () => {
               </h2>
             </div>
 
-            <div className="space-y-4">
-              {recentMatches.map((match, index) => (
+            {recentMatches.length === 0 ? (
+              <Card className="bg-gradient-to-br from-card to-black border-border p-12 text-center">
+                <Icon name="Trophy" size={64} className="text-muted-foreground mx-auto mb-6 opacity-50" />
+                <h3 className="font-heading text-2xl font-bold text-white mb-4">
+                  Результатов пока нет
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  История наших побед и поражений появится здесь после первых матчей.
+                </p>
+              </Card>
+            ) : (
+              <div className="space-y-4">
+                {recentMatches.map((match, index) => (
                 <Card
                   key={match.id}
                   className="bg-card border-border p-6 hover:border-primary/50 transition-all duration-300 animate-fade-in"
@@ -238,33 +206,10 @@ const Matches = () => {
                     </Badge>
                   </div>
                 </Card>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </section>
-
-          <Card className="bg-gradient-to-r from-primary/20 to-red-950/20 border-primary/50 p-8 text-center">
-            <Icon name="Bell" size={48} className="text-primary mx-auto mb-4" />
-            <h3 className="font-heading text-2xl font-bold mb-2 text-white">
-              Не пропустите наши матчи!
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Подпишитесь на наши социальные сети, чтобы получать уведомления о предстоящих играх
-            </p>
-            <div className="flex justify-center gap-4">
-              <Badge className="bg-primary hover:bg-primary/80 text-white cursor-pointer">
-                <Icon name="Youtube" className="mr-1" size={16} />
-                YouTube
-              </Badge>
-              <Badge className="bg-primary hover:bg-primary/80 text-white cursor-pointer">
-                <Icon name="Twitch" className="mr-1" size={16} />
-                Twitch
-              </Badge>
-              <Badge className="bg-primary hover:bg-primary/80 text-white cursor-pointer">
-                <Icon name="Twitter" className="mr-1" size={16} />
-                Twitter
-              </Badge>
-            </div>
-          </Card>
         </div>
       </div>
     </div>
