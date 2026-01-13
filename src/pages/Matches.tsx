@@ -231,12 +231,6 @@ const Matches = () => {
 };
 
 export default Matches;
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Icon name="Calendar" size={14} />
-                        {match.date}
-                      </div>
-                    </div>
 
                     <Badge
                       className={
