@@ -12,7 +12,33 @@ const upcomingMatches: Array<{
   format: string;
   status: string;
   stream: string;
-}> = [];
+  team?: string;
+}> = [
+  {
+    id: 1,
+    tournament: "Товарищеский матч",
+    team: "Willow Academy",
+    opponent: "Seporation Team",
+    opponentLogo: "⚔️",
+    date: "15 января 2026",
+    time: "18:00 МСК",
+    format: "BO3",
+    status: "upcoming",
+    stream: "https://twitch.tv/willowteam",
+  },
+  {
+    id: 2,
+    tournament: "Квалификация MLT Cup",
+    team: "Willow Team",
+    opponent: "1221 Team",
+    opponentLogo: "🎯",
+    date: "17 января 2026",
+    time: "20:00 МСК",
+    format: "BO3",
+    status: "upcoming",
+    stream: "https://twitch.tv/willowteam",
+  },
+];
 
 const recentMatches: Array<{
   id: number;
@@ -81,11 +107,13 @@ const Matches = () => {
                       </Badge>
                       <div className="flex items-center gap-4 mb-2">
                         <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-                            <span className="text-xl">🌳</span>
-                          </div>
+                          <img 
+                            src="https://cdn.poehali.dev/files/Без названия10_20260113212648.png" 
+                            alt={match.team || "Willow Team"}
+                            className="w-10 h-10 rounded-full object-contain"
+                          />
                           <span className="font-heading font-bold text-white">
-                            Willow Team
+                            {match.team || "Willow Team"}
                           </span>
                         </div>
                         <span className="font-heading text-2xl font-bold text-muted-foreground">
