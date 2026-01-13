@@ -24,7 +24,7 @@ const upcomingMatches: Array<{
     time: "18:00 МСК",
     format: "BO3",
     status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
+    stream: "https://www.twitch.tv/skv3r",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const upcomingMatches: Array<{
     time: "20:00 МСК",
     format: "BO3",
     status: "upcoming",
-    stream: "https://twitch.tv/willowteam",
+    stream: "https://www.twitch.tv/skv3r",
   },
 ];
 
