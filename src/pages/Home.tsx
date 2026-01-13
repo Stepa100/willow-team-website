@@ -120,47 +120,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-red-950/10 to-black">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-5xl font-bold text-center mb-12 text-white">
-            Наши спонсоры
-          </h2>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Спасибо нашим партнерам за поддержку команды и веру в наш потенциал
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-square">
-              <div className="text-center">
-                <div className="text-5xl mb-3">🎮</div>
-                <p className="text-sm font-heading font-bold text-muted-foreground">Gaming Gear Pro</p>
-              </div>
-            </Card>
-
-            <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-square">
-              <div className="text-center">
-                <div className="text-5xl mb-3">⚡</div>
-                <p className="text-sm font-heading font-bold text-muted-foreground">Energy Boost</p>
-              </div>
-            </Card>
-
-            <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-square">
-              <div className="text-center">
-                <div className="text-5xl mb-3">🖥️</div>
-                <p className="text-sm font-heading font-bold text-muted-foreground">Tech Solutions</p>
-              </div>
-            </Card>
-
-            <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-square">
-              <div className="text-center">
-                <div className="text-5xl mb-3">🎯</div>
-                <p className="text-sm font-heading font-bold text-muted-foreground">Esports Network</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 };
